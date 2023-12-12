@@ -1,0 +1,112 @@
+/* Q1. Given an array of integers, write a Java program to find and print
+* all the duplicate elements.
+* */
+package Mock_Program;
+
+import java.util.Scanner;
+
+public class DuplicateArrayElements {
+    public static void main(String[] args) {
+        Scanner dis=new Scanner(System.in);
+        System.out.println("Enter the size of an array:");
+        int n=dis.nextInt();
+        int arr[]=new int[n];
+        int i,j;
+        System.out.println("Enter " +n+" elemnts in an array:");
+        for(i=0;i<n;i++){
+
+            arr[i]=dis.nextInt();
+        }
+        for(i=0;i<n;i++){
+            int c=0;
+            for(j=i+1;j<n;j++) {
+                if (arr[i] == arr[j]) {
+                        c++;
+                        break;
+                }
+            }
+                if(c== 1){
+                    System.out.println("Duplicate Elements:"+arr[i]);
+              }
+            }
+        }
+    }
+/* Output:
+Enter the size of an array:
+6
+Enter 6 elemnts in an array:
+2
+2
+3
+4
+5
+4
+Duplicate Elements:2
+Duplicate Elements:4
+*/
+******************************************************************************************************
+//Q2.Write a java function to check if two strings are anagram of each other.
+package Mock_Program;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class AnagramExample {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter the first string: ");
+            String a=sc.next();
+
+            System.out.print("Enter the Second string: ");
+            String b=sc.next();
+
+            char c[]=a.toCharArray();
+            char d[]=b.toCharArray();
+
+            Arrays.sort(c);
+            Arrays.sort(d);
+
+            boolean result=Arrays.equals(c,d);
+
+            if(result==true) {
+                System.out.println("Strings are equal");
+            }
+            else {
+                System.out.println("Strings are not equal");
+            }
+        }
+    }
+    /*  Output:
+    Enter the first string: silent
+    Enter the Second string: listen
+    Strings are equal
+    */
+******************************************************************************************
+/*Q3. Write a java program to print a right-angled triangle of stars.
+    The number rows should be taken as input
+ */
+package Mock_Program;
+
+import java.util.Scanner;
+
+public class RightAngledTriangle {
+    public static void main(String[] args) {
+        Scanner dis=new Scanner(System.in);
+        int n;
+        System.out.println("Enter the number of Rows:");
+        n=dis.nextInt();
+        for(int i=1; i<=n;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+/* Output
+    *
+    * *
+    * * *
+    * * * *
+    * * * * * upto nth rows value
+ */
